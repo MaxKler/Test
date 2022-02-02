@@ -1,6 +1,7 @@
 import React from "react";
 
-import {Route, Redirect} from 'react-router-dom'
+import { Redirect} from 'react-router-dom'
+import Layout from "../../layouts/Layout";
 
 const AuthSecurity = ({path, component}) => {
      const backToken = 'TEST'
@@ -14,7 +15,7 @@ const AuthSecurity = ({path, component}) => {
 
      return (
        <>
-          {auths ? <Route path={path} component={component}/> : <Redirect to="/" />}
+          {auths ? <Layout path={path} component={component}/> : <Redirect to="/" />}
        </>
      )
 }

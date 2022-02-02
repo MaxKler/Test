@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DATA from './../../userData'
-
+import classes from './auth.module.scss'
 import { useHistory } from "react-router";
 
 const Auth = () => {
@@ -34,27 +34,29 @@ const signIn = () => {
 }    
 
     return (
-        <form>
-            <div>
-                <input 
-                    value={value.login}
-                    onChange={(e) => setValue({
-                         ...value,
-                     login: e.target.value
-                    })}
-                />
-                {!authError ? 
-                <></> :
-                <div>error</div>
-                }
-            </div>
+        <div className={classes.auth}>
+            <form>
+                <div>
+                    <input 
+                        value={value.login}
+                        onChange={(e) => setValue({
+                            ...value,
+                        login: e.target.value
+                        })}
+                    />
+                   {!authError ? 
+                   <></> :
+                   <div>error</div>
+                   }
+                </div>
             
-            <input value={value.password} onChange={(e) => setValue({
-                ...value,
-                password: e.target.value
-            })} />
+                <input value={value.password} onChange={(e) => setValue({
+                   ...value,
+                   password: e.target.value
+                })} />
                 <div onClick={signIn}>XXX</div> 
-        </form>
+            </form>
+        </div>
     )
 }
 

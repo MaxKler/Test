@@ -1,8 +1,17 @@
 .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 0;
     height: 100vh;
+    display: none;
+    background: rgba(0, 0, 0, 0.473);
+    &__active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   .modal_window {
     background: darkblue;
@@ -28,52 +37,4 @@
     background: darkgreen;
     border: 2px solid yellow;
   }
-.shop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #001d30;
-    animation: changeBg 5s linear infinite;
-}
-.shop2 {
-   
-}
-@keyframes changeBg {
-    to {
-        filter: hue-rotate(360deg);
-    }
-}
-.loader {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(to top, #001d30 40%, #51eeee);
-    border-radius: 50%;
-    animation: rotate 2s linear infinite;
-}  
-@keyframes rotate {
-    to {
-        transform: rotate(360deg) ;
-    }
-    
-}
-.loader::before {
-    content: '';
-    position: absolute;
-    background: #001d30;
-    inset: 20px 20px 0 0;
-    border-radius: 50%;
-}
-.loader::after {
-    content: '';
-    position: absolute;
-    top:50%;
-    right: -8px;
-    width: 40px;
-    height: 40px;
-    background: #51eeee;
-    border-radius: 50%;
-    box-shadow: 0 0 5px #51eeee,
-    0 0 25px #51eeee, 0 0 50px #51eeee, 0 0 75px #51eeee;
-}
+
